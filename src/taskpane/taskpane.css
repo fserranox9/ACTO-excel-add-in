@@ -1,0 +1,281 @@
+
+:root,
+:root.dark {
+  --bg-color: white;
+  --bg-color2: lightslategrey;
+  --bg-color3: lightgrey;
+  --bg-color4: dimgray;
+  --bg-color5: lightgrey;
+  --bg-color6:black;
+
+  --text-color: white;
+  --text-color2: black;
+  --text-color3:rgb(25, 247, 210);
+  --text-color4: black;
+  --text-color5: white;
+  --text-color7: Blue;
+}
+
+:root.pink {
+  --bg-color: white;
+  --bg-color2: #ffcad4;
+  --bg-color3: #e75480;
+  --bg-color4: rgb(189, 27, 121);
+  --bg-color5: rgb(189, 27, 121);
+  --bg-color6:#ffcad4;;
+
+  --text-color: #e75480;
+  --text-color2: black;
+  --text-color3: black;
+  --text-color4: white;
+  --text-color5: rgb(189, 27, 121);
+  --text-color7: Blue;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header */
+.header {
+    padding: 5px;
+    padding-bottom: 15px;
+    padding-top: 15px;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: column;
+    flex-direction: column;
+    align-items:center;
+    background-color:var(--bg-color2);
+}
+
+.header>h2,h4,h5 {
+    margin:0;
+    padding:0;
+    color:var(--text-color3);
+}
+
+#idVY{
+    color:var(--bg-color3);
+}
+
+/* Top Navigation bar */
+.toptab{
+    background-color:var(--bg-color3);
+    text-align: center;
+}
+
+.toptab button.active{
+    background-color: var(--bg-color);
+    color: var(--text-color2);
+}
+
+.tablinks {
+    
+    color:var(--text-color2);
+    vertical-align: middle;
+    text-align: center;
+    background-color:inherit;
+    border:none;
+    font-weight: bold;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    align-content: center;
+}
+
+.toptab img {
+    vertical-align:middle
+}
+
+.tablinks:hover {
+    background-color:var(--bg-color4);
+    color:var(--text-color3);
+    cursor:pointer;
+}
+
+/* Tabs */
+.tabcontent {
+    text-align: center;
+    display: none;
+}
+
+/* Home Tab */
+#home-tab{
+    padding: 5px;
+    padding-bottom: 5px;
+    padding-top: 5px;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: column;
+    flex-direction: column;
+    align-items:center;
+    font-weight: bold;
+}
+
+.addOptions{
+    display: inline-block; 
+    text-align: center;
+    
+}
+
+.addOptions>button{
+    padding: 2px;
+    display: inline-block;
+    margin-bottom: 15px;
+}
+
+#theme-select>option{
+    text-align: center;
+}
+
+
+/* Tables */
+
+table {
+    --border:1px solid var(--bg-color6); 
+    border: 3px solid var(--bg-color2); 
+    font-family: sans-serif;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 8px; 
+    border-spacing: 0;
+    overflow: hidden;
+    border-collapse: separate;
+}
+
+thead {
+    background-color: var(--bg-color3);
+    border-collapse: separate;
+}
+
+th:not(:last-child),td:not(:last-child) {
+ border-right: var(--border);
+}
+
+thead>tr:not(:last-child)>th,
+thead>tr:not(:last-child)>td,
+tbody>tr:not(:last-child)>th,
+tbody>tr:not(:last-child)>td,
+tfoot>tr:not(:last-child)>th,
+tfoot>tr:not(:last-child)>td,
+tr:not(:last-child)>td,
+tr:not(:last-child)>th,
+thead:not(:last-child),
+tbody:not(:last-child),
+tfoot:not(:last-child) {
+ border-bottom: var(--border);
+}
+
+tfoot {
+    background-color: var(--bg-color3);
+    color: var(--text-color2);
+}
+
+tbody {
+    background-color:var(--bg-color);
+  }
+
+th, td {
+    padding: 8px 10px;
+    text-align: center;
+}
+
+tbody>tr:hover{
+    background-color:var(--bg-color6);
+    color:var(--text-color5);
+}
+
+tfoot>tr:hover{
+font-weight: bold;
+}
+
+#MVAHeaderID:hover{
+    cursor: pointer;
+    color:var(--text-color7);
+}
+
+#Projections-tab>table {
+    table-layout: fixed;
+    width: 90%;
+    overflow-wrap: break-word;
+}
+
+
+#ProjectionCollapse:hover{
+    cursor: pointer;
+    color:var(--text-color7);
+}
+
+
+
+
+
+
+
+label{
+    display: inline-block;
+ 
+    clear: left;
+    width: 125px;
+    text-align: left;
+    padding-top: 10px;
+}
+
+select {
+  display: inline-block;
+  width: 125px;
+  text-align: left;
+}
+
+option{
+    text-align: left;
+}
+
+#dropdownPlanin{
+    width: 280px;
+}
+
+#dropdownPeriodin{
+    width: 85px;
+}
+
+#buttonFreshStart, #buttonResetFS{
+    background-color:var(--bg-color5);
+    color:var(--text-color4);
+    border-style: ridge;
+    border-color:var(--text-color4);
+    cursor:pointer;
+}
+
+.chart-container{
+    margin: auto;
+    width:80%;
+    height:40%;
+}
+
+.AmortSelect{
+    border: 2px solid var(--bg-color3);
+    margin: auto;
+    width:50%;
+    padding-bottom: 20px;
+    padding-top: 10px;
+}
+
+
+
+.footer {
+    background-color: inherit;
+    color:var(--text-color2);
+    bottom: 0;
+    font-size: 8px;
+    font-weight: bold;
+    text-align: center;
+    padding-top: 50px;
+}
+
+

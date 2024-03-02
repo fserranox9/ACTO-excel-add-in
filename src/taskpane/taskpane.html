@@ -1,0 +1,515 @@
+
+<!DOCTYPE html>
+<html lang ="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Employer Pool Summary</title>
+    <link rel="icon" href="/assets/icon_tab.png">
+
+    <script type="text/javascript" src="https://appsforoffice.microsoft.com/lib/1.1/hosted/office.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+    <script defer="defer" src="taskpane.js"></script>
+
+
+    <link rel="stylesheet" href="https://static2.sharepointonline.com/files/fabric/office-ui-fabric-core/11.0.0/css/fabric.min.css"/>
+    <link href="taskpane.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body class="ms-font-m ms-welcome ms-Fabric">
+
+    <main>
+
+        <header class="header">
+            <h2 id = "idERname"> Employer-Name</h2>
+            <h5 id = "idERcid">123456789</h5>
+            <h5 id = "idVY">YYYY</h5>
+        </header>
+
+        <div class="toptab">
+            <button class="tablinks" onclick="openTab(event, 'home-tab')">
+                Home
+                <img src="/assets/icon_home.png" alt="Home icon" width="25" height="25">
+            </button>
+            <button class="tablinks" onclick="openTab(event, 'Sensitivity-tab')">
+                Sensitivity
+                <img src="/assets/icon_sensitivity.png" alt="Sensitivity Analysis icon" width="25" height="25">
+            </button>
+            <button class="tablinks" onclick="openTab(event, 'Projections-tab')">
+                Projections
+                <img src="/assets/icon_projections.png" alt="Projected Contributions icon" width="25" height="25">
+            </button>
+            <button class="tablinks" onclick="openTab(event, 'UAL-tab')">
+                UAL
+                <img src="/assets/icon_ual.png" alt="Unfunded Accrued Liability icon" width="25" height="25">
+            </button>
+        </div>
+
+        <div class="content">
+
+            <div id="home-tab" class="tabcontent"> 
+
+                <img width="200" height="200" src="../../assets/logo_ACTO.png" alt="ACTO Logo" title="ACTO-Logo" />
+                <div class="addOptions">
+                        <button id="expExl" title="ExportExcel">&#128215; Export to Excel</button>
+                        <button id="printPDF" title="PrinttoPDF">&#128229; Print to PDF</button>
+                        <br>
+                        <button id="reLoad" title="Reload">&#128225; Sync to Excel</button>
+                        <br>
+                        <select name="theme-select" id="theme-select" title="themeselection">
+                            <option selected disabled>&#128760; Theme </option>
+                            <option value="dark">&#128125; TechNo</option>
+                            <option value="pink">&#129497; PinkYe</option>
+                        </select>
+                </div>
+            </div>
+
+            <div id="Sensitivity-tab" class="tabcontent">
+              
+                <h3>Discount Rate Sensitivity &plusmn; 1%</h3>
+                <table id="idTblDiscountSensitivity">
+                    <thead>
+                        <tr>
+                            <th colspan="2">Scenario:</th>
+                            <th colspan="4"> &#128201;Low</th>
+                            <th colspan="4">&#10059;Baseline </th>
+                            <th colspan="4"> &#128200;High </th>
+                        </tr>
+                        <tr>
+                            <th>Plan Name</th>
+                            <th>VRP</th>
+                            <th>Total NC</th>
+                            <th>AL</th>
+                            <th>UAL</th>
+                            <th>MVA / AL</th>
+                            <th>Total NC</th>
+                            <th>AL</th>
+                            <th>UAL</th>
+                            <th>MVA / AL</th>
+                            <th>Total NC</th>
+                            <th>AL</th>
+                            <th>UAL</th>
+                            <th>MVA / AL</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                    <tfoot>
+                    </tfoot>
+                </table>
+ 
+                <h3>Inflation Last Annual &plusmn; 1%</h3>
+                <table id="idTblInflationSensitivity">
+                    <thead>
+                        <tr>
+                            <th colspan="2">Scenario:</th>
+                            <th colspan="4"> &#128201;Low</th>
+                            <th colspan="4">&#10059;Baseline </th>
+                            <th colspan="4"> &#128200;High </th>
+                        </tr>
+                        <tr>
+                            <th>Plan Name</th>
+                            <th>VRP</th>
+                            <th>Total NC</th>
+                            <th>AL</th>
+                            <th>UAL</th>
+                            <th>MVA / AL</th>
+                            <th>Total NC</th>
+                            <th>AL</th>
+                            <th>UAL</th>
+                            <th>MVA / AL</th>
+                            <th>Total NC</th>
+                            <th>AL</th>
+                            <th>UAL</th>
+                            <th>MVA / AL</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                    <tfoot>
+                    </tfoot>
+                </table>                
+
+                <h3>Mortality Sensitivity &plusmn; 10%</h3>
+                <table id="idTblMortalitySensitivity">
+                    <thead>
+                        <tr>
+                            <th colspan="2">Scenario:</th>
+                            <th colspan="4"> &#128201;Low</th>
+                            <th colspan="4">&#10059;Baseline </th>
+                            <th colspan="4"> &#128200;High </th>
+                        </tr>
+                        <tr>
+                            <th>Plan Name</th>
+                            <th>VRP</th>
+                            <th>Total NC</th>
+                            <th>AL</th>
+                            <th>UAL</th>
+                            <th>MVA / AL</th>
+                            <th>Total NC</th>
+                            <th>AL</th>
+                            <th>UAL</th>
+                            <th>MVA / AL</th>
+                            <th>Total NC</th>
+                            <th>AL</th>
+                            <th>UAL</th>
+                            <th>MVA / AL</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                    <tfoot>
+                    </tfoot>
+                </table>  
+                
+                <h3 id="MVAHeaderID" onclick="HideTable('MVAHeaderID','idTblMVA')">Assets</h3>
+                <table id="idTblMVA">
+                    <thead>
+                        <tr>
+                            <th colspan="2"></th>
+                            <th> </th>
+                        </tr>
+                        <tr>
+                            <th>Plan Name</th>
+                            <th>VRP</th>
+                            <th>MVA</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                    <tfoot>
+                    </tfoot>
+                </table>  
+
+                <h3>Maturity Measures</h3>
+                <table id="idTblmaturityMeasures">
+                    <thead>
+                        <tr>
+                            <th>Plan Name</th>
+                            <th>VRP</th>
+                            <th>RET AL to Total AL Ratio</th>
+                            <th>ACT to Unique RET Ratio</th>
+                            <th>ACT Count</th>
+                            <th>RET Count</th>
+                            <th>Unique RET Count</th>
+                            <th>RET AL</th>
+                            <th>Total AL</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                    <tfoot>
+                    </tfoot>
+                </table>
+
+                <h3> Hypothetical Termination </h3>
+                <table id="idTblHypotheticalTerm">
+                    <thead>
+                        <tr>
+                            <th colspan="2"></th>
+                            <th colspan="3">1.75 % </th>
+                            <th colspan="3">4.50 % </th>
+                        </tr>
+                        <tr>
+                            <th>Plan Name</th>
+                            <th>VRP</th>
+                            <th>AL</th>
+                            <th>UAL</th>
+                            <th>Funded Ratio</th>
+                            <th>AL</th>
+                            <th>UAL</th>
+                            <th>Funded Ratio</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                    <tfoot>
+                    </tfoot>
+                </table>
+
+                <h3> Low Default Risk Obligation Measure </h3>
+                <table id="idTblLDROM">
+                    <thead>
+                        <tr>
+                            <th colspan="2"></th>
+                            <th colspan="4">Total AL</th>
+                            <th colspan="3">Total</th>
+                        </tr>
+                        <tr>
+                            <th>Plan Name</th>
+                            <th>VRP</th>
+                            <th>ACT</th>
+                            <th>TRA</th>
+                            <th>SEP</th>
+                            <th>RET</th>
+                            <th>AL</th>
+                            <th>UAL</th>
+                            <th>Hyp Cost</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                    <tfoot>
+                    </tfoot>
+                </table>
+
+
+            </div>
+
+            <div id="Projections-tab" class="tabcontent">
+                <h2 id="ProjectionCollapse" onclick="ProjectionCollapse(['idTblprojections','idTblprojections1','idTblprojections2','idTblprojections3','idTblprojections4','idTblprojections5','idTblprojections6'])">Projected Contributions</h2>
+
+                <table id="idTblprojections">
+                    <thead>
+                        <tr>
+                            <th>Plan Name</th>
+                            <th>VRP</th>
+                            <th>Projected Payroll for Contribution Year</th>
+                            <th>UAL Contribution $</th>
+                            <th>ER Normal Cost $</th>
+                            <th>UAL Contribution %</th>
+                            <th>ER Normal Cost %</th>
+                            <th>Total ER %</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                    <tfoot>
+                    </tfoot>
+                </table>
+
+
+                <table id="idTblprojections1">
+                    <thead>
+                        <tr>
+                            <th>Plan Name</th>
+                            <th>VRP</th>
+                            <th>Projected Payroll for Contribution Year</th>
+                            <th>UAL Contribution $</th>
+                            <th>ER Normal Cost $</th>
+                            <th>UAL Contribution %</th>
+                            <th>ER Normal Cost %</th>
+                            <th>Total ER %</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                    <tfoot>
+                    </tfoot>
+                </table>
+
+                <table id="idTblprojections2">
+                    <thead>
+                        <tr>
+                            <th>Plan Name</th>
+                            <th>VRP</th>
+                            <th>Projected Payroll for Contribution Year</th>
+                            <th>UAL Contribution $</th>
+                            <th>ER Normal Cost $</th>
+                            <th>UAL Contribution %</th>
+                            <th>ER Normal Cost %</th>
+                            <th>Total ER %</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                    <tfoot>
+                    </tfoot>
+                </table>
+
+                <table id="idTblprojections3">
+                    <thead>
+                        <tr>
+                            <th>Plan Name</th>
+                            <th>VRP</th>
+                            <th>Projected Payroll for Contribution Year</th>
+                            <th>UAL Contribution $</th>
+                            <th>ER Normal Cost $</th>
+                            <th>UAL Contribution %</th>
+                            <th>ER Normal Cost %</th>
+                            <th>Total ER %</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                    <tfoot>
+                    </tfoot>
+                </table>
+
+                <table id="idTblprojections4">
+                    <thead>
+                        <tr>
+                            <th>Plan Name</th>
+                            <th>VRP</th>
+                            <th>Projected Payroll for Contribution Year</th>
+                            <th>UAL Contribution $</th>
+                            <th>ER Normal Cost $</th>
+                            <th>UAL Contribution %</th>
+                            <th>ER Normal Cost %</th>
+                            <th>Total ER %</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                    <tfoot>
+                    </tfoot>
+                </table>
+
+                <table id="idTblprojections5">
+                    <thead>
+                        <tr>
+                            <th>Plan Name</th>
+                            <th>VRP</th>
+                            <th>Projected Payroll for Contribution Year</th>
+                            <th>UAL Contribution $</th>
+                            <th>ER Normal Cost $</th>
+                            <th>UAL Contribution %</th>
+                            <th>ER Normal Cost %</th>
+                            <th>Total ER %</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                    <tfoot>
+                    </tfoot>
+                </table>
+
+                <table id="idTblprojections6">
+                    <thead>
+                        <tr>
+                            <th>Plan Name</th>
+                            <th>VRP</th>
+                            <th>Projected Payroll for Contribution Year</th>
+                            <th>UAL Contribution $</th>
+                            <th>ER Normal Cost $</th>
+                            <th>UAL Contribution %</th>
+                            <th>ER Normal Cost %</th>
+                            <th>Total ER %</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                    <tfoot>
+                    </tfoot>
+                </table>
+
+            </div>
+
+            <div id="UAL-tab" class="tabcontent">
+                <h2>Combined UAL Schedule</h2>
+                <div class="chart-container" id="chartContainer1">
+                    <canvas id="chartUAL"></canvas>
+                </div>            
+                <br>
+                <h2>Hypothetical UAL Schedule</h2>
+                <div class="chart-container" id="chartContainer2">
+                    <canvas id="chartHypUAL"></canvas>
+                </div>
+
+                <div class="AmortSelect">
+                    <button id="buttonFreshStart">Simulate Fresh Start</button>
+                    <button id="buttonResetFS">Reset</button>
+                    <div id="panelFS">
+
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="footer">
+            &#128056; 2024 Actuarial Office Technology Team - CalPERS
+        </div>
+
+    </main>
+</body>
+
+<script>
+
+    //theme selection
+    const setTheme = theme => document.documentElement.className = theme;
+    document.getElementById('theme-select').addEventListener('change', function() {setTheme(this.value);});
+
+    //transition between tabs
+    function openTab(evt, TabName) {
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tabcontent");
+
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+        }
+        tablinks = document.getElementsByClassName("tablinks");
+        for (i = 0; i < tablinks.length; i++) 
+        {
+            tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+        if (TabName == "home-tab"){
+            document.getElementById(TabName).style.display = "flex";
+        }
+        else{
+            document.getElementById(TabName).style.display = "block";
+        }
+        evt.currentTarget.className += " active";
+    }
+
+    //collapse projection
+    function ProjectionCollapse(aTableNames){
+
+    let x = 0;
+
+    var valdate = new  Date(document.getElementById("idVY").innerHTML);
+    valYear = valdate.getFullYear();
+
+        if( document.getElementById("ProjectionCollapse").innerHTML == "Projected Contributions"){
+            aTableNames.forEach((tablename) => {
+                document.getElementById(tablename).rows[0].cells[0].innerHTML = "Valuation Year"
+                document.getElementById(tablename).rows[0].cells[1].innerHTML = "Rate Setting Year"
+                document.getElementById(tablename).getElementsByTagName('tbody')[0].style.display = "none";
+                if (tablename != aTableNames[0] ) {
+                    document.getElementById(tablename).getElementsByTagName('thead')[0].style.display = "none";  
+                }
+                document.getElementById(tablename).rows[document.getElementById(tablename).rows.length-1].cells[0].innerHTML = "06/30/" + (valYear + x) + " | " + (valYear + x+2) + "-" + (valYear + x+3);
+            x =x+1;
+            });
+        document.getElementById("ProjectionCollapse").innerHTML = "Employer Projected Contributions";
+        return;
+        }
+
+    let y=0;
+
+    if( document.getElementById("ProjectionCollapse").innerHTML == "Employer Projected Contributions"){
+
+    aTableNames.forEach((tablename) => {
+        document.getElementById(tablename).rows[0].cells[0].innerHTML = "Plan Name"
+        document.getElementById(tablename).rows[0].cells[1].innerHTML = "VRP"
+        document.getElementById(tablename).getElementsByTagName('tbody')[0].style.removeProperty('display');
+        document.getElementById(tablename).getElementsByTagName('thead')[0].style.removeProperty('display');
+        document.getElementById(tablename).rows[document.getElementById(tablename).rows.length-1].cells[0].innerHTML = "06/30/" + (valYear + y) + " | " + (valYear + y+2) + "-" + (valYear + y+3);
+    y =y+1;
+    });
+    document.getElementById("ProjectionCollapse").innerHTML = "Projected Contributions";
+    return;
+    }
+
+    }
+
+    function HideTable(clickID, theTableID){
+        if ( document.getElementById(clickID).innerHTML =="Assets")
+        {
+            document.getElementById(theTableID).style.display = "none";
+            document.getElementById(clickID).innerHTML = "Display Assets" 
+            return;          
+        }
+        if ( document.getElementById(clickID).innerHTML =="Display Assets")
+        {
+            document.getElementById(theTableID).style.removeProperty('display');
+            document.getElementById(clickID).innerHTML = "Assets"    
+            return;       
+        }
+    }
+</script>
+
+</html>
